@@ -13,25 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-import sys
-
 from setuptools import setup
 
 __version__ = '7.0.3'
-
-REQUIREMENTS = [
-    'google-cloud-datastore==1.15.3',
-    'httplib2>=0.9.1,<=0.12.0',
-    'oauth2client>=2.0.1,<4.0.0',
-]
-
-if sys.version < (3,):
-    # Constrain sub-dependencies to versions that support Python 2.
-    REQUIREMENTS.extend([
-        'cachetools<4',
-        'rsa<4',
-    ])
 
 setup(
     name='googledatastore',
@@ -43,7 +27,13 @@ setup(
     url='https://github.com/GoogleCloudPlatform/google-cloud-datastore',
     packages=['googledatastore'],
     package_dir={'googledatastore': 'googledatastore'},
-    install_requires=REQUIREMENTS,
+    install_requires=[
+        'cachetools<4',
+        'google-cloud-datastore==1.15.3',
+        'httplib2>=0.9.1,<=0.12.0',
+        'oauth2client>=2.0.1,<4.0.0',
+        'rsa<4',
+    ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Topic :: Database',
