@@ -27,7 +27,7 @@ REQUIREMENTS = [
 ]
 
 if sys.version < (3, 1):
-    # Avoids installing dependency versions that dropped Python 2 support.
+    # Constrain sub-dependencies to versions that support Python 2.
     REQUIREMENTS.extend([
         'cachetools<4',
         'rsa<4',
