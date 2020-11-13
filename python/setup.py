@@ -26,7 +26,7 @@ REQUIREMENTS = [
     'oauth2client>=2.0.1,<4.0.0',
 ]
 
-if sys.version < (3, 1):
+if sys.version < (3,):
     # Constrain sub-dependencies to versions that support Python 2.
     REQUIREMENTS.extend([
         'cachetools<4',
