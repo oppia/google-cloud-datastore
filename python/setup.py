@@ -15,7 +15,7 @@
 #
 from setuptools import setup
 
-__version__ = '7.0.2'
+__version__ = '7.0.3'
 
 setup(
     name='googledatastore',
@@ -28,9 +28,11 @@ setup(
     packages=['googledatastore'],
     package_dir={'googledatastore': 'googledatastore'},
     install_requires=[
+        'cachetools<4',
+        'google-cloud-datastore==1.15.3',
         'httplib2>=0.9.1,<=0.12.0',
         'oauth2client>=2.0.1,<4.0.0',
-        'proto-google-cloud-datastore-v1>=0.90.0',
+        'rsa<4',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
